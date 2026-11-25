@@ -1,0 +1,28 @@
+[project]
+name = "finance-analysis-pp"
+version = "0.1.0"
+description = "Small, tested functions for measuring investment returns"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "pandas>=2.0"]
+
+[dependency-groups]
+dev = ["mypy>=1.10", "pandas-stubs>=2.0", "pytest>=8.0", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/finance_analysis_pp"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+strict = true
+files = ["src"]
